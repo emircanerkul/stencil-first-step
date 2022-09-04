@@ -7,15 +7,28 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { MatchResults } from "@stencil-community/router";
 export namespace Components {
+    interface AppButton {
+        "type": string;
+    }
     interface AppHome {
     }
     interface AppProfile {
         "match": MatchResults;
     }
+    interface AppProfileImage {
+    }
     interface AppRoot {
+    }
+    interface ProfileImage {
     }
 }
 declare global {
+    interface HTMLAppButtonElement extends Components.AppButton, HTMLStencilElement {
+    }
+    var HTMLAppButtonElement: {
+        prototype: HTMLAppButtonElement;
+        new (): HTMLAppButtonElement;
+    };
     interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {
     }
     var HTMLAppHomeElement: {
@@ -28,39 +41,67 @@ declare global {
         prototype: HTMLAppProfileElement;
         new (): HTMLAppProfileElement;
     };
+    interface HTMLAppProfileImageElement extends Components.AppProfileImage, HTMLStencilElement {
+    }
+    var HTMLAppProfileImageElement: {
+        prototype: HTMLAppProfileImageElement;
+        new (): HTMLAppProfileImageElement;
+    };
     interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {
     }
     var HTMLAppRootElement: {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
+    interface HTMLProfileImageElement extends Components.ProfileImage, HTMLStencilElement {
+    }
+    var HTMLProfileImageElement: {
+        prototype: HTMLProfileImageElement;
+        new (): HTMLProfileImageElement;
+    };
     interface HTMLElementTagNameMap {
+        "app-button": HTMLAppButtonElement;
         "app-home": HTMLAppHomeElement;
         "app-profile": HTMLAppProfileElement;
+        "app-profile-image": HTMLAppProfileImageElement;
         "app-root": HTMLAppRootElement;
+        "profile-image": HTMLProfileImageElement;
     }
 }
 declare namespace LocalJSX {
+    interface AppButton {
+        "type"?: string;
+    }
     interface AppHome {
     }
     interface AppProfile {
         "match"?: MatchResults;
     }
+    interface AppProfileImage {
+    }
     interface AppRoot {
     }
+    interface ProfileImage {
+    }
     interface IntrinsicElements {
+        "app-button": AppButton;
         "app-home": AppHome;
         "app-profile": AppProfile;
+        "app-profile-image": AppProfileImage;
         "app-root": AppRoot;
+        "profile-image": ProfileImage;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "app-button": LocalJSX.AppButton & JSXBase.HTMLAttributes<HTMLAppButtonElement>;
             "app-home": LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
             "app-profile": LocalJSX.AppProfile & JSXBase.HTMLAttributes<HTMLAppProfileElement>;
+            "app-profile-image": LocalJSX.AppProfileImage & JSXBase.HTMLAttributes<HTMLAppProfileImageElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
+            "profile-image": LocalJSX.ProfileImage & JSXBase.HTMLAttributes<HTMLProfileImageElement>;
         }
     }
 }
