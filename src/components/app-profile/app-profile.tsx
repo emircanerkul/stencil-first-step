@@ -20,7 +20,9 @@ export class AppProfile {
     if (this.match && this.match.params.name) {
       return (
         <div class="app-profile">
-          <p>Hello! My name is {this.normalize(this.match.params.name)}. My name was passed in through a route param!</p>
+          <p>Hello! My name is {this.normalize(this.match.params.name)}.</p>
+          <app-profile-image image={this.match.params.name == 'stencilx' ? 'man-844213_640.jpg' : undefined}></app-profile-image>
+          <p>My name was passed in through a route param!</p>
 
           <stencil-route-link url="/">
             <app-button type='error'>Return Home</app-button>
