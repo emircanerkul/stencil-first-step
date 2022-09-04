@@ -1,4 +1,8 @@
-# Stencil App Starter
+# Stencil First Step
+
+To be able to use to get benefits from web components easily with this package.
+
+## What Is The Stencil?
 
 Stencil is a compiler for building fast web apps using Web Components.
 
